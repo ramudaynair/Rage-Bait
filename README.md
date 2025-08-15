@@ -33,7 +33,7 @@ Say “ugh” or “shey”? The code either gets AI rescued or obliterated, but
 ## Technical Details
 
 ### Technologies Used
-- **Software**: TypeScript, VS Code Extension API, Node.js, GitHub Copilot API, Google Gemini API
+- **Software**: JavaScript, VS Code Extension API, Node.js, GitHub Copilot API, Google Gemini API
 - **Tools**: vsce, npm, Web Speech API (via local speech server)
 
 ---
