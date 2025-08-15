@@ -1,12 +1,21 @@
-# 🔥 RageBait - The Chaotic VS Code Extension
+<img width="2000" height="600" alt="RageBait Banner" src="https://github.com/user-attachments/assets/ragebait-banner-placeholder" />
 
-[![GitHub](https://img.shields.io/badge/GitHub-ramudaynair%2FRage--Bait-orange?style=for-the-badge&logo=github)](https://github.com/ramudaynair/Rage-Bait)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
-[![VS Code](https://img.shields.io/badge/VS%20Code-Extension-green?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=ragebait-dev.ragebait)
+# RageBait 🔥
 
-> ⚠️ **DANGER WARNING** ⚠️
-> This extension will randomly DESTROY or FIX your code when you type or speak trigger words.
-> Use at your own risk! Always commit your work before using RageBait!
+## Basic Details
+### Team Name: Chaos Coders
+
+### Team Members
+- Team Lead: Ramudaynair - [Your College/Organization]
+
+### Project Description
+A chaotic VS Code extension that monitors your typing and speech for frustration triggers, then randomly destroys or fixes your code using AI. It's the perfect blend of chaos and productivity that nobody asked for but everyone secretly needs!
+
+### The Problem (that doesn't exist)
+Developers are too comfortable and productive while coding. There's not enough chaos and unpredictability in the development process. What if your code could fight back when you get frustrated?
+
+### The Solution (that nobody asked for)
+RageBait listens to your typing and speech, detects when you're getting frustrated (words like "wtf", "damn", "help"), and then flips a coin - either completely destroys your code or attempts to fix it using AI. It's like having a mischievous coding companion that keeps you on your toes!
 
 ## 🎯 What is RageBait?
 
@@ -44,9 +53,33 @@ RageBait is a chaotic VS Code extension that monitors both your typing AND speec
 - **Statistics**: Track your destruction vs fix ratio and trigger sources
 - **Configuration Info**: View current settings at a glance
 
-## 📦 Installation
+### Project Documentation
+For Software:
 
-### From VSIX Package
+# Screenshots (Add at least 3)
+![Extension Sidebar](https://github.com/user-attachments/assets/ragebait-sidebar-screenshot)
+*RageBait control panel in VS Code sidebar showing status and quick actions*
+
+![Speech Recognition](https://github.com/user-attachments/assets/ragebait-speech-interface)
+*Web-based speech recognition interface running on localhost:3847*
+
+![Code Destruction](https://github.com/user-attachments/assets/ragebait-destruction-demo)
+*Example of RageBait randomly destroying code after detecting trigger words*
+
+# Diagrams
+![Architecture](https://github.com/user-attachments/assets/ragebait-architecture-diagram)
+*RageBait system architecture showing VS Code extension, speech server, and AI integration*
+
+### Project Demo
+# Video
+[RageBait Demo Video](https://github.com/ramudaynair/Rage-Bait/demo-video)
+*Complete demonstration of RageBait detecting speech triggers and randomly destroying/fixing code*
+
+# Additional Demos
+- [Live Demo Website](https://rage-bait.vercel.app) - Interactive landing page
+- [Speech Recognition Test](http://localhost:3847) - Test the speech detection system
+
+## 📦 Installation
 1. Download the latest `.vsix` file from releases
 2. Open VS Code
 3. Press `Ctrl+Shift+P` and type "Extensions: Install from VSIX"
@@ -245,41 +278,12 @@ node server.js
 
 MIT License - Use at your own risk!
 
-## 🤝 Contributing
-
-1. Fork the repository: `https://github.com/ramudaynair/Rage-Bait`
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Test thoroughly (especially with the chaos features!)
-5. Commit your changes: `git commit -m 'Add amazing feature'`
-6. Push to the branch: `git push origin feature/amazing-feature`
-7. Submit a pull request
-
-## 🤝 Support
-
-- **Issues**: [GitHub Issues](https://github.com/ramudaynair/Rage-Bait/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ramudaynair/Rage-Bait/discussions)
-- **Repository**: [https://github.com/ramudaynair/Rage-Bait](https://github.com/ramudaynair/Rage-Bait)
-
-## 🎭 Disclaimer
-
-RageBait is designed for entertainment and experimental purposes. While it includes safety features like undo functionality, you should always:
-
-1. **Commit your work** before using RageBait
-2. **Use version control** for important projects
-3. **Test in safe environments** before using on production code
-4. **Keep backups** of critical files
-
-The developers are not responsible for any code loss or damage caused by using this extension. Use responsibly and have fun!
+## Team Contributions
+- **Ramudaynair**: Project lead, VS Code extension development, speech recognition system, AI integration, web interface design, documentation
 
 ---
+Made with ❤️ and 🔥 at TinkerHub Useless Projects
 
-## 🔗 Links
-
-- **🌐 Live Demo**: [RageBait Landing Page](https://rage-bait.vercel.app)
-- **📦 GitHub Repository**: [https://github.com/ramudaynair/Rage-Bait](https://github.com/ramudaynair/Rage-Bait)
-- **👨‍💻 Developer**: [@ramudaynair](https://github.com/ramudaynair)
-
-**Made with 🔥 and chaos by [@ramudaynair](https://github.com/ramudaynair)**
-
-**Remember**: RageBait is chaos incarnate. It will test your reflexes, your backup strategies, and your sanity. But hey, at least it might fix your code 50% of the time! 🔥
+[![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)](https://www.tinkerhub.org/)
+[![Static Badge](https://img.shields.io/badge/UselessProjects--25-25?link=https%3A%2F%2Fwww.tinkerhub.org%2Fevents%2FQ2Q1TQKX6Q%2FUseless%2520Projects)](https://www.tinkerhub.org/events/Q2Q1TQKX6Q/Useless%20Projects)
+[![GitHub](https://img.shields.io/badge/GitHub-ramudaynair%2FRage--Bait-orange?style=flat&logo=github)](https://github.com/ramudaynair/Rage-Bait)
