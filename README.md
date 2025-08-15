@@ -17,6 +17,9 @@
 </div>
 
 ---
+### Team Members
+- Team Member 1: Ram U Nair
+- Team Member 2: Reyhan Hazeem
 
 ## 🎯 What is RageBait?
 
@@ -269,5 +272,8 @@ RageBait is designed for entertainment and experimental purposes. While it inclu
 The developers are not responsible for any code loss or damage caused by using this extension. Use responsibly and have fun!
 
 ---
+## Team Contributions
+- **Ramudaynair**: Project lead, VS Code extension development, speech recognition system, 
+- **Reyhan Hazeem**: Speech recognition system, web interface design, documentation,AI integration,documentation
 
 **Remember**: RageBait is chaos incarnate. It will test your reflexes, your backup strategies, and your sanity. But hey, at least it might fix your code 50% of the time! 🔥
