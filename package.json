@@ -1,0 +1,224 @@
+{
+  "name": "ragebait",
+  "displayName": "RageBait",
+  "description": "🔥 A chaotic VS Code extension that monitors typing and speech, then randomly destroys or fixes your code when trigger words are detected. Use at your own risk!",
+  "version": "1.1.2",
+  "publisher": "ragebait-dev",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other",
+    "Debuggers"
+  ],
+  "keywords": [
+    "chaos",
+    "code",
+    "destruction",
+    "speech",
+    "ai",
+    "copilot",
+    "gemini"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension-simple.js",
+  "contributes": {
+    "views": {
+      "ragebait-sidebar": [
+        {
+          "id": "ragebait.mainView",
+          "name": "RageBait Control Panel",
+          "when": "true"
+        },
+        {
+          "id": "ragebait.historyView",
+          "name": "Undo History",
+          "when": "true"
+        },
+        {
+          "id": "ragebait.statsView",
+          "name": "Statistics",
+          "when": "true"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "ragebait-sidebar",
+          "title": "RageBait",
+          "icon": "$(flame)"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ragebait.trigger",
+        "title": "🔥 Trigger Action",
+        "category": "RageBait",
+        "icon": "$(flame)"
+      },
+      {
+        "command": "ragebait.toggle",
+        "title": "🔄 Toggle Extension",
+        "category": "RageBait",
+        "icon": "$(circle-slash)"
+      },
+      {
+        "command": "ragebait.toggleSpeech",
+        "title": "🎤 Toggle Speech",
+        "category": "RageBait",
+        "icon": "$(mic)"
+      },
+      {
+        "command": "ragebait.panicUndo",
+        "title": "🚨 Panic Undo (5x)",
+        "category": "RageBait",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "ragebait.showSettings",
+        "title": "⚙️ Settings",
+        "category": "RageBait",
+        "icon": "$(settings-gear)"
+      },
+      {
+        "command": "ragebait.refreshViews",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "ragebait.clearHistory",
+        "title": "Clear History",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "ragebait.exportHistory",
+        "title": "Export History",
+        "icon": "$(export)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "ragebait.refreshViews",
+          "when": "view == ragebait.mainView",
+          "group": "navigation"
+        },
+        {
+          "command": "ragebait.showSettings",
+          "when": "view == ragebait.mainView",
+          "group": "navigation"
+        },
+        {
+          "command": "ragebait.clearHistory",
+          "when": "view == ragebait.historyView",
+          "group": "navigation"
+        },
+        {
+          "command": "ragebait.exportHistory",
+          "when": "view == ragebait.historyView",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "ragebait.panicUndo",
+          "when": "view == ragebait.historyView",
+          "group": "inline"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "ragebait.mainView",
+        "contents": "Welcome to RageBait! 🔥\n\nThis extension will randomly destroy or fix your code when you type or speak trigger words.\n\n[🔥 Trigger Action](command:ragebait.trigger)\n[⚙️ Open Settings](command:ragebait.showSettings)\n\n⚠️ Always backup your work before using RageBait!"
+      },
+      {
+        "view": "ragebait.historyView",
+        "contents": "No undo history yet.\n\nActions will appear here after you trigger RageBait.\n\n[🔥 Trigger Action](command:ragebait.trigger)"
+      },
+      {
+        "view": "ragebait.statsView",
+        "contents": "No statistics yet.\n\nStats will appear here after you use RageBait.\n\n[🔥 Trigger Action](command:ragebait.trigger)"
+      }
+    ],
+    "configuration": {
+      "title": "RageBait",
+      "properties": {
+        "ragebait.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable RageBait extension"
+        },
+        "ragebait.speechEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable speech recognition"
+        },
+        "ragebait.triggerWords": {
+          "type": "array",
+          "default": ["ugh", "ugh", "damn", "fix this", "help", "broken", "shit", "ayyo", "stupid", "hate", "why", "error", "bug", "crash"],
+          "description": "Words that trigger RageBait actions",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ragebait.destructionChance": {
+          "type": "number",
+          "default": 0.5,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Probability of destruction vs fixing (0.5 = 50/50)"
+        },
+        "ragebait.speechConfidenceThreshold": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Minimum confidence level for speech recognition"
+        },
+        "ragebait.geminiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Google Gemini API key for AI-powered fixes"
+        },
+        "ragebait.maxDestructionLines": {
+          "type": "number",
+          "default": 50,
+          "minimum": 1,
+          "maximum": 1000,
+          "description": "Maximum number of lines to destroy in one action"
+        },
+        "ragebait.enableNotifications": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show notifications for RageBait actions"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "echo 'No compilation needed for JavaScript'",
+    "package": "vsce package",
+    "test": "echo 'Tests not implemented yet'"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^16.x"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ragebait-dev/ragebait-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/ragebait-dev/ragebait-vscode/issues"
+  },
+  "homepage": "https://github.com/ragebait-dev/ragebait-vscode#readme",
+  "license": "MIT"
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 RageBait - Chaotic VS Code Extension</title>
+    <meta name="description" content="A chaotic VS Code extension that monitors typing and speech, then randomly destroys or fixes your code when trigger words are detected.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1b69 50%, #ff6b35 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 80px 0;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            animation: flame 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes flame {
+            0% { transform: scale(1) rotate(-2deg); }
+            100% { transform: scale(1.1) rotate(2deg); }
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e, #ff6b35);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+        }
+
+        .warning {
+            background: rgba(255, 107, 53, 0.2);
+            border: 2px solid #ff6b35;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ff6b35;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ff6b35;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 80px 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            padding: 80px 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .tech-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #ff6b35;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 40px 0;
+            text-align: center;
+            color: #cccccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .logo {
+                font-size: 4rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">🔥</div>
+            <h1 class="title">RageBait</h1>
+            <p class="subtitle">A chaotic VS Code extension that monitors typing and speech, then randomly destroys or fixes your code when trigger words are detected.</p>
+            
+            <div class="warning">
+                <strong>⚠️ WARNING:</strong> This extension will randomly modify your code. Always backup your work before using RageBait!
+            </div>
+            
+            <a href="#download" class="btn">Download Extension</a>
+            <a href="#demo" class="btn btn-secondary">View Demo</a>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">🔥 Chaotic Features</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎤</div>
+                    <h3 class="feature-title">Speech Recognition</h3>
+                    <p>Monitors your speech for trigger words like "shey", "damn", "help" and triggers actions when detected.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⌨️</div>
+                    <h3 class="feature-title">Typing Monitor</h3>
+                    <p>Watches what you type and triggers when you express frustration through your keyboard.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🎲</div>
+                    <h3 class="feature-title">Random Actions</h3>
+                    <p>50/50 chance to either destroy your code or attempt to fix it using AI assistance.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Integration</h3>
+                    <p>Uses Google Gemini AI to analyze and potentially fix your code when triggered.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚨</div>
+                    <h3 class="feature-title">Panic Undo</h3>
+                    <p>Emergency undo button that reverses the last 5 actions when things go wrong.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Statistics</h3>
+                    <p>Track your rage incidents, destruction vs fixes, and overall chaos metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">🔧 How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Install Extension</h3>
+                    <p>Download and install RageBait from VS Code marketplace or load manually.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Start Speech Server</h3>
+                    <p>Run the Node.js speech recognition server to enable voice monitoring.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Code & Rage</h3>
+                    <p>Write code normally. When you get frustrated and say trigger words, RageBait activates!</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Chaos Ensues</h3>
+                    <p>RageBait randomly destroys or fixes your code. Use panic undo if needed!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-stack">
+        <div class="container">
+            <h2 class="section-title">🛠️ Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>VS Code Extension API</h4>
+                    <p>Core extension framework</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Node.js</h4>
+                    <p>Speech recognition server</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Web Speech API</h4>
+                    <p>Browser-based speech recognition</p>
+                </div>
+                <div class="tech-item">
+                    <h4>WebSocket</h4>
+                    <p>Real-time communication</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Google Gemini AI</h4>
+                    <p>Code analysis and fixing</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Express.js</h4>
+                    <p>Web server framework</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="download">
+        <div class="container">
+            <h2 class="section-title">🚀 Ready for Chaos?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 40px;">
+                Download RageBait and experience the most chaotic coding session of your life!
+            </p>
+
+            <a href="https://github.com/ramudaynair/Rage-Bait" class="btn" target="_blank" rel="noopener noreferrer">📦 Download from GitHub</a>
+            <a href="https://marketplace.visualstudio.com/items?itemName=ragebait-dev.ragebait" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">🏪 VS Code Marketplace</a>
+
+            <div style="margin-top: 40px;">
+                <h3>Quick Start:</h3>
+                <div style="background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <code style="color: #ff6b35;">
+                        # 1. Install the extension<br>
+                        # 2. Start speech server<br>
+                        cd speech-server<br>
+                        npm install<br>
+                        node server.js<br>
+                        <br>
+                        # 3. Open http://localhost:3847 in Chrome<br>
+                        # 4. Allow microphone access<br>
+                        # 5. Start coding and raging! 🔥
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 RageBait. Use at your own risk! Always backup your code.</p>
+            <p>Made with 🔥 and chaos by <a href="https://github.com/ramudaynair" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; text-decoration: none;">@ramudaynair</a></p>
+            <div style="margin-top: 20px;">
+                <a href="https://github.com/ramudaynair" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; text-decoration: none; margin: 0 15px; font-size: 1.5rem;" title="GitHub Profile">
+                    <span style="margin-right: 8px;">🐙</span>GitHub
+                </a>
+                <a href="https://github.com/ramudaynair/Rage-Bait" target="_blank" rel="noopener noreferrer" style="color: #ff6b35; text-decoration: none; margin: 0 15px; font-size: 1.5rem;" title="Project Repository">
+                    <span style="margin-right: 8px;">📦</span>Repository
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
