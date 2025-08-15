@@ -12,8 +12,6 @@
 **This extension will INSTANTLY and RANDOMLY destroy or fix your code without warning!**
 **Always commit your work and use version control before activating RageBait!**
 
-[🚀 Quick Start](#-quick-start) • [📖 Features](#-features) • [🎤 Speech Setup](#-speech-recognition-setup) • [⚙️ Configuration](#️-configuration) • [🛡️ Safety](#️-safety-features)
-
 </div>
 
 ---
