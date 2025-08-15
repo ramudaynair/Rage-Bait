@@ -85,7 +85,7 @@ node simple-server.js
 
 ## Team Contributions
 
-Ram U Nair: Core VS Code extension logic, speech integration, chaos engine
+Ram U Nair: Core VS Code extension logic, speech integration, chaos engine 
 Reyhan Hazeem: UI components, AI-fix chain integration, control panel design
 
 ## Disclaimer
