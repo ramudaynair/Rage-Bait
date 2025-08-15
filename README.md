@@ -139,6 +139,12 @@ node simple-server.js
 3. Speak trigger words naturally - the extension will detect them
 4. Check the status bar for speech recognition status
 
+## Screenshots
+
+<img width="1852" height="1032" alt="Screenshot 2025-08-15 082228" src="https://github.com/user-attachments/assets/c8f6cdc1-f823-4394-ab91-465bb748c895" />
+<img width="1843" height="1031" alt="Screenshot 2025-08-15 081957" src="https://github.com/user-attachments/assets/77e2204a-8bc0-4286-9f1f-ef0b22250a36" />
+<img width="1918" height="1030" alt="Screenshot 2025-08-15 081921" src="https://github.com/user-attachments/assets/4d63a458-f8c8-45a5-ae84-7ee1ed091863" />
+
 ## ⚙️ Configuration
 
 Access settings via `File > Preferences > Settings` and search for "RageBait":
