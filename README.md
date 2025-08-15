@@ -3,30 +3,28 @@
 # [RageBait] 🎯
 
 ## Basic Details
+### Team Name: [Ryze]
 
-## Team Name
-Ryze
-
-## Team Members
+### Team Members
 - **Ram U Nair** – Toc H Institute of Science and Technology
 - **Reyhan Hazeem** – Toc H Institute of Science and Technology
 
 ---
 
-## Project Description
+### Project Description
 A chaotic VS Code extension that listens to your voice for trigger words and even catches them when you type, then randomly either **destroys** or **fixes** your code.  
 Because who needs predictability?
 
 
 ---
 
-## The Problem (that definitely exists)
+### The Problem (that definitely exists)
 Programmers get frustrated — code breaks, bugs pile up, and sanity slips.  
 There’s no dramatic flair to those moments (just tears).
 
 ---
 
-## The Solution (nobody asked for it)
+### The Solution (nobody asked for it)
 RageBait turns your frustration into unpredictable action.  
 Say “ugh” or “shey”? The code either gets AI rescued or obliterated, but always with style.
 
