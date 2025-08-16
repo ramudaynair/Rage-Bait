@@ -27,8 +27,6 @@ All that energy is wasted, when it could be turned into something more… unpred
 
 ### The Solution (nobody asked for it)
 
-## The Solution (nobody asked for)
-
 RageBait takes that frustration and puts it to use. The extension listens for sighs or exasperated words like *shey* or *ayyo*, then reacts instantly. 
 Sometimes it deletes messy code, sometimes it tries an AI-powered fix, and sometimes it makes things worse. 
 It’s unpredictable, chaotic, and designed to turn every outburst into action.
