@@ -1,13 +1,23 @@
-// Fix this code:
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 const path = require('path');
 
-/**
- * Simple RageBait Speech Server
- * Serves a web UI for speech recognition and forwards triggers to VS Code
- */
+
+class SimpleSpeechServer {
+    constructor() {
+        this.app = express();
+        this.server = http.createServer(this.app);
+        this.wss = new WebSocket.Server({ server: this.server });
+        this.port = 3847;
+        this.clients = new Set();
+        this.isListening = false;
+        this.triggerWords = [
+            'ugh', 'shey', 'damn', 'thenga', 'ayyo', 'shit',
+            'stupid', 'hate', 'why', 'oh no', 'noo', 'crash'
+        ];
+        this.confidenceThreshold = 0.7;
+    }
 
     initialize() {
         this.setupExpress();
@@ -178,7 +188,7 @@ const path = require('path');
     </div>
 
     <script>
-        const ws = new WebSocket('ws://localhost:3848');
+        const ws = new WebSocket('ws://localhost:3847');
         let recognition = null;
         let isRecognizing = false;
 
