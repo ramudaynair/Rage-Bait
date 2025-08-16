@@ -19,15 +19,19 @@ Because who needs predictability?
 ---
 
 ### The Problem (that doesn't exists)
-Programmers get frustrated — code breaks, bugs pile up, and sanity slips.  
-There’s no dramatic flair to those moments (just tears).
 
+Programming is never just about writing code — it’s about the endless cycle of bugs, fixes, and inevitable frustration. 
+Developers sigh, complain, or even rage-quit entire projects when things go wrong.
+All that energy is wasted, when it could be turned into something more… unpredictable.
 ---
 
 ### The Solution (nobody asked for it)
-RageBait turns your frustration into unpredictable action.  
-Say “ugh” or “shey”? The code either gets AI rescued or obliterated, but always with style.
 
+## The Solution (nobody asked for)
+
+RageBait takes that frustration and puts it to use. The extension listens for sighs or exasperated words like *shey* or *ayyo*, then reacts instantly. 
+Sometimes it deletes messy code, sometimes it tries an AI-powered fix, and sometimes it makes things worse. 
+It’s unpredictable, chaotic, and designed to turn every outburst into action.
 ---
 
 ## Technical Details
