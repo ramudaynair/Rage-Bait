@@ -88,6 +88,7 @@ node simple-server.js
 ## Team Contributions
 
 Ram U Nair: Core VS Code extension logic, speech integration, chaos engine 
+
 Reyhan Hazeem: UI components, AI-fix chain integration, control panel design
 
 ## Disclaimer
@@ -100,3 +101,7 @@ RageBait is designed for entertainment and experimental purposes. While it inclu
 4. **Keep backups** of critical files
 
 The developers are not responsible for any code loss or damage caused by using this extension. Use responsibly and have fun!
+
+Made with ❤️ at TinkerHub Useless Projects
+
+![static_badge](https://camo.githubusercontent.com/a6af2288021b3c8143967be1e96f69342202f4668d59699394553db0ab955edb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5573656c65737350726f6a656374732d2d32352d32353f6c696e6b3d68747470732533412532462532467777772e74696e6b65726875622e6f72672532466576656e74732532465132513154514b5836512532465573656c657373253235323050726f6a65637473)
