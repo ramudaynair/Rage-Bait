@@ -14,22 +14,22 @@
 ### Project Description
 A chaotic VS Code extension that listens to your voice for trigger words and even catches them when you type, then randomly either **destroys** or **fixes** your code.  
 Because who needs predictability?
-
+Programming is never just about writing code
 
 ---
 
 ### The Problem (that doesn't exists)
-
 Programming is never just about writing code — it’s about the endless cycle of bugs, fixes, and inevitable frustration. 
 Developers sigh, complain, or even rage-quit entire projects when things go wrong.
 All that energy is wasted, when it could be turned into something more… unpredictable.
+
 ---
 
 ### The Solution (nobody asked for it)
-
 RageBait takes that frustration and puts it to use. The extension listens for sighs or exasperated words like *shey* or *ayyo*, then reacts instantly. 
 Sometimes it deletes messy code, sometimes it tries an AI-powered fix, and sometimes it makes things worse. 
 It’s unpredictable, chaotic, and designed to turn every outburst into action.
+
 ---
 
 ## Technical Details
