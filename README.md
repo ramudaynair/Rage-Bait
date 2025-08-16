@@ -18,7 +18,7 @@ Because who needs predictability?
 
 ---
 
-### The Problem (that definitely exists)
+### The Problem (that doesn't exists)
 Programmers get frustrated — code breaks, bugs pile up, and sanity slips.  
 There’s no dramatic flair to those moments (just tears).
 
